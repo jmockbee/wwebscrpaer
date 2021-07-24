@@ -6,4 +6,5 @@ awscert  = input ('input aws:')
 url = 'https://www.aws.training/certification' + awscert
 r = requests.get(url)
 soup = bs (r.content, 'html.parser')
-account = soup.find ()
+account = soup.find ('div',{'class' : 'CertificationFeatureList'})
+print (account)
