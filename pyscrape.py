@@ -2,9 +2,9 @@ import requests
 # changing name to bs
 from bs4 import BeautifulSoup as bs
 
-awscert  = input ('input aws:')
-url = 'https://www.aws.training/certification' + awscert
+gecko  = input ('input gecko:')
+url = 'https://www.coingecko.com/en' + gecko
 r = requests.get(url)
 soup = bs (r.content, 'html.parser')
-account = soup.find ('div',{'class' : 'CertificationFeatureList'})
-print (account)
+picture = soup.find ('img',{'alt' :'CoinGecko Logo'}) ['src']
+print (picture)
